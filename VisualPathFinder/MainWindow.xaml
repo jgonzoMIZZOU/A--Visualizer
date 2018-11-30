@@ -1,0 +1,28 @@
+﻿<Window x:Class="VisualPathFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VisualPathFinder"
+        mc:Ignorable="d"
+        Title="Pathfinding Visualization" Height="625" Width="716" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="505"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="frame" Background="Gray" MouseDown="MouseButtonClicked" Grid.Row="0"/>
+        <CheckBox x:Name="stepsCheckbox" Content="Show Steps" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="ShowStepsCheckBox" Grid.Row="1" Margin="0,5,0,0"/>
+        <CheckBox x:Name="diagCheckBox" Content="Diagonal" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="DiagonalCheckBox" Grid.Row="1" Margin="0,30,0,0"/>
+        <CheckBox x:Name="trigCheckBox" Content="Trig" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="TrigCheckBox" Width="47" Grid.Row="1" Margin="103,5,0,0"/>
+        <Button x:Name="runButton" Content="Run" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Click="Run" Grid.Row="1" Margin="172,5,0,0"/>
+        <Label x:Name="modeLabel" Content="Mode: Map Creation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="248" Grid.Row="1" Margin="0,53,0,0"/>
+        <Label x:Name="speedLabel" Content="Speed: 50" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Grid.Row="1" Margin="294,17,0,0"/>
+        <Label x:Name="openCLabel" Content="Open: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Grid.Row="1" Margin="490,17,0,0"/>
+        <Label x:Name="closedLabel" Content="Closed: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Grid.Row="1" Margin="560,17,0,0"/>
+        <Label x:Name="pathLabel" Content="Path: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Grid.Row="1" Margin="629,17,0,0"/>
+        <Slider x:Name="speedSlider"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" ValueChanged="SpeedSlider" Grid.Row="1" Margin="294,56,0,0" Maximum="200" Minimum="10" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight"/>
+        <Button x:Name="drawGridButton" Content="Draw Grid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Click="drawGridButton_Click" Grid.Row="1" Margin="490,53,0,0"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="172,38,0,0" Grid.Row="1" VerticalAlignment="Top" Width="70" Click="ClearGrid"/>
+    </Grid>
+</Window>
